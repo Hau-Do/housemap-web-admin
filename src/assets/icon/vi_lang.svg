@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="20px" viewBox="0 0 27 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>D3EDAA41-05E2-4799-8F7B-B9F95C334E9B</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="01.-[JS]-Main-Dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="[JS]-Dashboard-Edit-mode" transform="translate(-1380.000000, -27.000000)">
+            <g id="JobHop-/-Button-/-Default-/-Normal" transform="translate(1380.000000, 27.000000)">
+                <g id="Group" transform="translate(0.000000, 0.440000)">
+                    <path d="M24.0000073,19 L2.99999268,19 C1.34327637,19 0,17.6911656 0,16.076928 L0,2.92307198 C0,1.30883437 1.34327637,-1.77635684e-15 2.99999268,-1.77635684e-15 L24.0000073,-1.77635684e-15 C25.6567236,-1.77635684e-15 27,1.30883437 27,2.92307198 L27,16.076928 C27,17.6911656 25.6567236,19 24.0000073,19 Z" id="Path" fill="#DA251D" transform="translate(13.500000, 9.500000) scale(-1, 1) rotate(-180.000000) translate(-13.500000, -9.500000) "></path>
+                    <polygon id="Path" fill="#FFFF00" transform="translate(13.500000, 9.000000) scale(-1, 1) rotate(-180.000000) translate(-13.500000, -9.000000) " points="19 10.1758658 14.7982291 10.1758658 13.4996419 14 12.2017709 10.1758658 8 10.1758658 11.3987239 7.82008399 10.1008529 4 13.4996419 6.36562691 16.899082 4.0029286 15.6004948 7.81964782"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

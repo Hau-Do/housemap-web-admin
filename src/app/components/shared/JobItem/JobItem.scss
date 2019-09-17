@@ -1,0 +1,80 @@
+.job-item {
+    display: flex;
+    border: 0.6px solid #97979763;
+    height: 100px;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    .company-logo-container {
+        width: 81px;
+        height: 72px;
+        &.saved-job {
+            width: 119px;
+        }
+        .company-logo {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .job-infor-container {
+        position: relative;
+        margin-left: 16px;
+        width: 100%;
+        .job-address {
+            .address {
+                font-size: 16px;
+                font-weight: 590;
+            }
+        }
+        .company {
+            position: absolute;
+            top: 38%;
+        }
+        .applied-date {
+            position: absolute;
+            bottom: 0;
+            opacity: 0.8;
+            color: #9B9B9B;
+            font-size: 13px;
+            font-weight: 590;
+        }
+        .text-bold-blue {
+            color: #2664AB;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .action-buttons {
+        display: flex;
+        align-items: center;
+        .remove {
+            height: 36px;
+            padding: 0 32px;
+            text-align: center;
+            cursor: pointer;
+            .fa-trash {
+                color: #163B65;
+            }
+            div {
+                font-size: 14px;
+            }
+        }
+        .apply {
+            height: 36px;
+            width: 109px;
+            border: 1px solid #163B65;
+            border-radius: 6px;
+            background-color: #163B65;
+            color: white;
+            font-size: 15px;
+            padding: 8px 0;
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+            &:active {
+                color: white;
+            }
+        }
+    }
+}
