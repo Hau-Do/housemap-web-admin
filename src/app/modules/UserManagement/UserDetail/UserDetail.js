@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './UserDetail.scss';
 
 const UserDetail = () => {

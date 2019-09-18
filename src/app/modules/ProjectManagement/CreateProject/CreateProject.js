@@ -1,3 +1,4 @@
+import React from 'react';
 import './CreateProject.scss';
 
 const CreateProject = () => {

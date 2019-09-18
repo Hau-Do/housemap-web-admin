@@ -1,4 +1,4 @@
-export { default as UserList } from './UserList';
-export { default as UserDetail } from './UserDetail';
+export { default as ProjectList } from './ProjectList';
+export { default as CreateProject } from './CreateProject';
 
 export default {};

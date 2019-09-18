@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './ProjectList.scss';
 
 const ProjectList = () => {

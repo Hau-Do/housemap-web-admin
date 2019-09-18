@@ -9,8 +9,6 @@ export function UserDto(userDto) {
     this.lastName = _userDto.lastName || "";
     this.avatar = _userDto.avatar || "";
     this.address = _userDto.address || "";
-    this.isJobseekeer = _userDto.isJobseekeer || false;
-    this.isRecruiter = _userDto.isRecruiter || false;
 }
 
 export function UserListDto(userListDto) {

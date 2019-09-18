@@ -1,30 +1,21 @@
-import React, { Component } from 'react';
-import './App.scss';
+import React from 'react';
 import history from './utils/BrowserHistory';
 import { Router, Route, Switch } from 'react-router-dom';
-import MyProfile from './modules/MyProfile/MyProfile';
-import MyJobs from './modules/MyJobs/MyJobs';
-import MyCVs from './modules/MyCVs/MyCVs';
-import About from './components/About/About';
+import { UserList } from './modules/UserManagement';
+import { ProjectList } from './modules/ProjectManagement';
+import './App.scss';
 
-// const Home = lazy(() => import('./modules/common/Home/Home'));
-// const About = lazy(() => import('./modules/common/About/About'));
+const App = () => {
 
-class App extends Component {
-
-  render() {
-    return (
-      <Router history = {history}>
-        <Switch>
-          <Route exact path="/" component={MyProfile}/>
-          <Route path="/my-profile" component={MyProfile}/>
-          <Route path="/my-jobs" component={MyJobs}/>
-          <Route path="/my-cvs" component={MyCVs}/>
-          <Route path="/about" component={About}/>
-        </Switch>
-      </Router>
-    );
-  }
-}
+  return (
+    <Router history = {history}>
+      <Switch>
+        <Route exact path="/" component={UserList}/>
+        <Route path="/user-management" component={UserList}/>
+        <Route path="/project-management" component={ProjectList}/>
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
