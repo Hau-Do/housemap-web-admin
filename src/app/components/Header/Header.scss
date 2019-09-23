@@ -1,0 +1,9 @@
+#my-header {
+    .nav-link {
+        color: #ffffff;
+        &:hover, &:focus {
+            background: #5c2790;
+            border-radius: 3px;
+        }
+    }
+}

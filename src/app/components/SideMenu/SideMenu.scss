@@ -1,0 +1,12 @@
+#my-menu {
+    .nav-sidebar {
+        .nav-item {
+            .nav-link {
+                &.active {
+                    background: #6c3f99;
+                    box-shadow: unset !important;
+                }
+            }
+        }
+    }
+}
