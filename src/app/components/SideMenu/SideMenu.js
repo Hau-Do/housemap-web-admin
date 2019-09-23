@@ -1,5 +1,6 @@
 import React from 'react';
 import './SideMenu.scss';
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/HousemapLogo.svg';
 import avatar from '../../../assets/img/avatar.jpg';
 
@@ -40,22 +41,22 @@ const SideMenu = () => {
             </a>
             <ul className="nav nav-treeview">
               <li className="nav-item">
-                <a href="./index.html" className="nav-link active">
+                <Link to="/user-management" className="nav-link">
                   <i className="far fa-circle nav-icon" />
-                  <p>Dashboard v1</p>
-                </a>
+                  <p>Quản lý user mới</p>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="./index2.html" className="nav-link">
+                <Link to="/" className="nav-link">
                   <i className="far fa-circle nav-icon" />
-                  <p>Dashboard v2</p>
-                </a>
+                  <p>Quản lý user leads</p>
+                </Link>
               </li>
               <li className="nav-item">
-                <a href="./index3.html" className="nav-link">
+                <Link to='/project-management' className="nav-link active">
                   <i className="far fa-circle nav-icon" />
-                  <p>Dashboard v3</p>
-                </a>
+                  <p>Quản lý dự án</p>
+                </Link>
               </li>
             </ul>
           </li>

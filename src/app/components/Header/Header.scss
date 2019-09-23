@@ -1,7 +1,7 @@
 #my-header {
     .nav-link {
         color: #ffffff;
-        &:hover, &:focus {
+        &:hover, &:focus, &:checked {
             background: #5c2790;
             border-radius: 3px;
         }
