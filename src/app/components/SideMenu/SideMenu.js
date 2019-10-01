@@ -9,7 +9,7 @@ const SideMenu = () => {
   return (
     <div id="my-menu">
   {/* Main Sidebar Container */}
-  <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{ overflowY: 'unset', background: '#41136f' }}>
+  <aside className="main-sidebar sidebar-dark-primary elevation-4 sidebar-container" style={{ overflowY: 'unset' }}>
     {/* Brand Logo */}
     <a href="index3.html" className="brand-link">
       <img src={logo} alt="logo" className="brand-image" />
