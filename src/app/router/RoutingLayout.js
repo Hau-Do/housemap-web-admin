@@ -5,7 +5,7 @@ import { UserList } from '../modules/UserManagement';
 import { ProjectList } from '../modules/ProjectManagement';
 
 const RoutingLayout = () => (
-    <div className="content-container" style={{ marginTop: '56px' }}>
+    <div className="content-container" style={{ marginTop: '72px' }}>
         <div className="content-wrapper">
             <Switch>
                 <Route path="/" component={UserList} exact/>

@@ -11,7 +11,7 @@ const SideMenu = () => {
   {/* Main Sidebar Container */}
   <aside className="main-sidebar sidebar-dark-primary elevation-4 sidebar-container" style={{ overflowY: 'unset' }}>
     {/* Brand Logo */}
-    <a href="index3.html" className="brand-link">
+    <a href="index3.html" className="brand-link brand-container">
       <img src={logo} alt="logo" className="brand-image" />
       <span className="brand-text" style={{ fontWeight: '500' }}>HouseMap</span>
     </a>
