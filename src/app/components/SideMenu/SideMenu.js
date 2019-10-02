@@ -41,7 +41,7 @@ const SideMenu = () => {
             </a>
             <ul className="nav nav-treeview">
               <li className="nav-item">
-                <Link to="/user-management" className="nav-link">
+                <Link to="/user-management" className="nav-link active">
                   <i className="far fa-circle nav-icon" />
                   <p>Quản lý user mới</p>
                 </Link>
@@ -53,7 +53,7 @@ const SideMenu = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to='/project-management' className="nav-link active">
+                <Link to='/project-management' className="nav-link">
                   <i className="far fa-circle nav-icon" />
                   <p>Quản lý dự án</p>
                 </Link>

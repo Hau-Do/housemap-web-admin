@@ -1,3 +1,30 @@
 #user-list {
-    height: auto;
+    padding: 32px 100px;
+    .direction-path {
+        color: #625C66;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .buttons-row {
+        display: flex;
+        justify-content: space-between;
+    }
+    .new-user-mnmt-tile {
+        color: #595959;
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .btn-custom {
+        justify-content: center;
+        width: 180px;
+        height: 32px;
+        &.left {
+            margin: 0 6px;
+        }
+        span {
+            height: 32px;
+            color: #666666;
+            font-size: 14px;
+        }
+    }
 }

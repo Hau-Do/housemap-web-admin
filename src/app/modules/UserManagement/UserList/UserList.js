@@ -1,8 +1,10 @@
 import './UserList.scss';
 import React, { useState, useEffect } from 'react';
+
+import Button, { ButtonGroup } from '@atlaskit/button';
+
 import { getUserList } from '../../../services/UserService';
-
-
+import { CustomTable } from '../../../components';
 
 const UserList = () => {
 
@@ -22,12 +24,16 @@ const UserList = () => {
 
     return(
         <div id="user-list">
-            <h2>User List</h2>
-            { users.map(user => (
-                <div>{user.name}</div>
-            ))}
+            <div className="direction-path"><span>Quản lý</span> / <span>Người dùng</span></div>
+            <div className="buttons-row">
+                <div className="new-user-mnmt-tile">Quản lý danh sách người dùng mới</div>
+                <ButtonGroup appearance="default">
+                    <Button className="btn-custom left" onClick={() => {}}>Tải xuống</Button>
+                    <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
+                </ButtonGroup>
+            </div>
+            <CustomTable />
         </div>
-       
     );
 };
 
