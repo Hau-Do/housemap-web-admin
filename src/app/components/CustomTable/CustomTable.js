@@ -3,46 +3,89 @@ import React from 'react';
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import Avatar from '@atlaskit/avatar';
-import DropdownMenu, {
-  DropdownItemGroup,
-  DropdownItem,
+import { Date } from '@atlaskit/date';
+import {
+  DropdownItemCheckbox,
+  DropdownItemGroupCheckbox,
 } from '@atlaskit/dropdown-menu';
+import Dropdown from '@atlaskit/dropdown-menu';
+import FilterIcon from '@atlaskit/icon/glyph/filter';
+import Lozenge from '@atlaskit/lozenge';
+import CustomStatus from '../CustomStatus';
+
+const getDropDownData = () => (
+  <DropdownItemGroupCheckbox>
+    <DropdownItemCheckbox defaultSelected id="all">ALL</DropdownItemCheckbox>
+    <DropdownItemCheckbox >
+      <Lozenge appearance="default">NGƯỜI DÙNG</Lozenge>
+    </DropdownItemCheckbox>
+    <DropdownItemCheckbox >
+      <Lozenge appearance="moved">CHƯA THAM GIA</Lozenge>
+    </DropdownItemCheckbox>
+    <DropdownItemCheckbox >
+      <Lozenge appearance="inprogress">ĐĂNG KÝ BÁN</Lozenge>
+    </DropdownItemCheckbox>
+    <DropdownItemCheckbox >
+      <Lozenge appearance="success">ĐỐI TÁC</Lozenge>
+    </DropdownItemCheckbox>
+  </DropdownItemGroupCheckbox>
+);
 
 const Wrapper = styled.div`
   min-width: 600px;
+  margin-top: 35px;
 `;
 
 const createHead = (withWidth) => {
   return {
     cells: [
       {
-        key: 'name',
-        content: 'Name',
-        isSortable: true,
-        width: withWidth ? 25 : undefined,
+        key: 'fullname',
+        content: 'Họ & Tên',
+        width: withWidth ? 25 : undefined
       },
       {
-        key: 'party',
-        content: 'Party',
+        key: 'phone',
+        content: 'Số điện thoại',
         shouldTruncate: true,
-        isSortable: true,
-        width: withWidth ? 15 : undefined,
+        width: withWidth ? 15 : undefined
       },
       {
-        key: 'term',
-        content: 'Term',
+        key: 'create-date',
+        content: 'Ngày tạo',
         shouldTruncate: true,
-        isSortable: true,
-        width: withWidth ? 10 : undefined,
+        width: withWidth ? 10 : undefined
       },
       {
-        key: 'content',
-        content: 'Comment',
+        key: 'register-date',
+        content: 'Ngày đăng ký',
         shouldTruncate: true,
+        width: withWidth ? 10 : undefined
       },
       {
-        key: 'more',
+        key: 'confirmed-date',
+        content: 'Ngày duyệt',
         shouldTruncate: true,
+        width: withWidth ? 10 : undefined
+      },
+      {
+        key: 'status',
+        content: (
+          <Dropdown
+            trigger={
+              <div className="status-container" style={{ display: 'flex' }}>
+                <label htmlFor="status-filter">Trạng thái</label>
+                <span id="status-filter" tabIndex="0" style={{ marginLeft: '24px' }}>
+                  <FilterIcon/>
+                </span>
+              </div>
+            }
+          >
+            {getDropDownData()}
+          </Dropdown>
+        ),
+        shouldTruncate: true,
+        width: withWidth ? 10 : undefined
       },
     ],
   };
@@ -53,222 +96,288 @@ export const head = createHead(true);
 export const presidents = [
   {
     id: 1,
-    nm: 'George Washington',
-    pp: 'None, Federalist',
-    tm: '1789-1797',
+    nm: 'Nguyễn Văn Hùng',
+    pp: '0989748574',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 2,
-    nm: 'John Adams',
-    pp: 'Federalist',
-    tm: '1797-1801',
+    nm: 'Lê Thị Hồng Hạnh',
+    pp: '0494768533',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 3,
-    nm: 'Thomas Jefferson',
-    pp: 'Democratic-Republican',
-    tm: '1801-1809',
+    nm: 'Paul Vũ',
+    pp: '0957928345',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 4,
-    nm: 'James Madison',
-    pp: 'Democratic-Republican',
-    tm: '1809-1817',
+    nm: 'Nguyễn Lê Hải Đăng',
+    pp: '0948374533',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 5,
-    nm: 'James Monroe',
-    pp: 'Democratic-Republican',
-    tm: '1817-1825',
+    nm: 'Hoàng Đăng Hải Nam',
+    pp: '0948574457',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 6,
-    nm: 'John Quincy Adams',
-    pp: 'Democratic-Republican',
-    tm: '1825-1829',
+    nm: 'Nguyễn Bá Danh',
+    pp: '0918928499',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 7,
-    nm: 'Andrew Jackson',
-    pp: 'Democrat',
-    tm: '1829-1837',
+    nm: 'Đỗ Gia Bảo',
+    pp: '0195758475',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 8,
-    nm: 'Martin van Buren',
-    pp: 'Democrat',
-    tm: '1837-1841',
+    nm: 'Trần Kim Hiếu',
+    pp: '0769484754',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 9,
-    nm: 'William H. Harrison',
-    pp: 'Whig',
-    tm: '1841',
+    nm: 'Nguyễn Thị Minh Ngọc',
+    pp: '0558583038',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 10,
-    nm: 'John Tyler',
-    pp: 'Whig',
-    tm: '1841-1845',
+    nm: 'Trần Văn Hoài',
+    pp: '0718383857',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 11,
-    nm: 'James K. Polk',
-    pp: 'Democrat',
-    tm: '1845-1849',
+    nm: 'Nguyễn Lê Yến Phượng',
+    pp: '0909475755',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 12,
-    nm: 'Zachary Taylor',
-    pp: 'Whig',
-    tm: '1849-1850',
+    nm: 'Trần Hoài Phong',
+    pp: '0595744444',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 13,
-    nm: 'Millard Fillmore',
-    pp: 'Whig',
-    tm: '1850-1853',
+    nm: 'Nguyễn Văn Quang',
+    pp: '0494757577',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 14,
-    nm: 'Franklin Pierce',
-    pp: 'Democrat',
-    tm: '1853-1857',
+    nm: 'Nguyễn Minh Quang',
+    pp: '0558474756',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 15,
-    nm: 'James Buchanan',
-    pp: 'Democrat',
-    tm: '1857-1861',
+    nm: 'Vũ Khắc Tâm',
+    pp: '0595757442',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 16,
-    nm: 'Abraham Lincoln',
-    pp: 'Republican',
-    tm: '1861-1865',
+    nm: 'Võ Hoàng Kim',
+    pp: '0595759622',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 17,
-    nm: 'Andrew Johnson',
-    pp: 'National Union',
-    tm: '1865-1869',
+    nm: 'Trịnh Kim Ngân',
+    pp: '0956228374',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 18,
-    nm: 'Ulysses S. Grant',
-    pp: 'Republican',
-    tm: '1869-1877',
+    nm: 'Nguyễn Bảo Nhi',
+    pp: '0354928334',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 19,
-    nm: 'Rutherford Hayes',
-    pp: 'Republican',
-    tm: '1877-1881',
+    nm: 'Vũ Dạ Kim Chi',
+    pp: '0957928346',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 20,
-    nm: 'James Garfield',
-    pp: 'Republican',
-    tm: '1881',
+    nm: 'Lê Thảo Nhi',
+    pp: '0357928342',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 21,
-    nm: 'Chester Arthur',
-    pp: 'Republican',
-    tm: '1881-1885',
+    nm: 'Hoàng Khả Quỳnh',
+    pp: '0757928343',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 22,
-    nm: 'Grover Cleveland',
-    pp: 'Democrat',
-    tm: '1885-1889',
+    nm: 'Đỗ Lâm Quỳnh',
+    pp: '0157928342',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 23,
-    nm: 'Benjamin Harrison',
-    pp: 'Republican',
-    tm: '1889-1893',
+    nm: 'Hớn Vĩ Dân',
+    pp: '0357928345',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 24,
-    nm: 'Grover Cleveland',
-    pp: 'Democrat',
-    tm: '1893-1897',
+    nm: 'Nguyễn Ngọc Thảo',
+    pp: '09575528348',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 25,
-    nm: 'William McKinley',
-    pp: 'Republican',
-    tm: '1897-1901',
+    nm: 'Trần Đình Vũ',
+    pp: '0856928343',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 26,
-    nm: 'Theodore Roosevelt',
-    pp: 'Republican',
-    tm: '1901-1909',
+    nm: 'Trần Đình Thi',
+    pp: '0357828346',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 27,
-    nm: 'William Taft',
-    pp: 'Republican',
-    tm: '1909-1913',
+    nm: 'Lê Yến Thanh',
+    pp: '0357728344',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 28,
-    nm: 'Woodrow Wilson',
-    pp: 'Democrat',
-    tm: '1913-1921',
+    nm: 'Bùi Thị Nghĩa',
+    pp: '0357428346',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 29,
-    nm: 'Warren Harding',
-    pp: 'Republican',
-    tm: '1921-1923',
+    nm: 'Nguyễn Hoàng Minh',
+    pp: '0357928344',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 30,
-    nm: 'Calvin Coolidge',
-    pp: 'Republican',
-    tm: '1923-1929',
+    nm: 'Huỳnh Hữu Tài',
+    pp: '0657938343',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 31,
-    nm: 'Herbert C. Hoover',
-    pp: 'Republican',
-    tm: '1929-1933',
+    nm: 'Nguyễn Thị Kim Hương',
+    pp: '0357928349',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 32,
-    nm: 'Franklin Delano Roosevelt',
-    pp: 'Democrat',
-    tm: '1933-1945',
+    nm: 'Võ Vô Lượng',
+    pp: '0877928792',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 33,
-    nm: 'Harry S Truman',
-    pp: 'Democrat',
-    tm: '1945-1953',
+    nm: 'Gia Cát Võ',
+    pp: '0657928344',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 34,
-    nm: 'Dwight David Eisenhower',
-    pp: 'Republican',
-    tm: '1953-1961',
+    nm: 'Gia Cát Thần Nam',
+    pp: '0342686836',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
   {
     id: 35,
-    nm: 'John Fitzgerald Kennedy',
-    pp: 'Democrat',
-    tm: '1961-1963',
+    nm: 'Huỳnh Gia Khánh',
+    pp: '0938453797',
+    dateCreated: 1569776400000,
+    dateRegistered: 1569862800000,
+    dateConfirmed: 1569949200000,
   },
 ];
 
 function createKey(input) {
   return input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
-}
-
-function iterateThroughLorem(index) {
-  return index > lorem.length ? index - lorem.length : index;
 }
 
 const NameWrapper = styled.span`
@@ -279,19 +388,6 @@ const NameWrapper = styled.span`
 const AvatarWrapper = styled.div`
   margin-right: 8px;
 `;
-
-const lorem = [
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  'Suspendisse tincidunt vehicula eleifend.',
-  'Nunc tristique nisi tortor, at pretium purus interdum sed.',
-  'Sed vel augue sit amet sapien elementum bibendum. Aenean aliquam elementum dui, quis euismod metus ultrices ut.',
-  'Curabitur est sapien, feugiat vel est eget, molestie suscipit nibh.',
-  'Nunc libero orci, lacinia id orci aliquam, pharetra facilisis leo.',
-  'Quisque et turpis nec lacus luctus ultrices quis vel nisi.',
-  'Cras maximus ex lorem, sit amet bibendum nibh placerat eu.',
-  'In hac habitasse platea dictumst. ',
-  'Duis molestie sem vel ante varius, rhoncus pretium arcu dictum.',
-];
 
 const rows = presidents.map((president, index) => ({
   key: `row-${index}-${president.nm}`,
@@ -309,7 +405,7 @@ const rows = presidents.map((president, index) => ({
               )}.png`}
             />
           </AvatarWrapper>
-          <a href="https://atlassian.design">{president.nm}</a>
+          <a href="http://localhost:3000/user-management">{president.nm}</a>
         </NameWrapper>
       ),
     },
@@ -319,19 +415,26 @@ const rows = presidents.map((president, index) => ({
     },
     {
       key: president.id,
-      content: president.tm,
-    },
-    {
-      content: iterateThroughLorem(index),
-    },
-    {
       content: (
-        <DropdownMenu trigger="More" triggerType="button">
-          <DropdownItemGroup>
-            <DropdownItem>{president.nm}</DropdownItem>
-          </DropdownItemGroup>
-        </DropdownMenu>
-      ),
+        <Date value={president.dateCreated} color={'white'} format="DD/MM" />
+      )
+    },
+    {
+      key: president.id,
+      content: (
+        <Date value={president.dateRegistered} color={'white'} format="DD/MM" />
+      )
+    },
+    {
+      key: president.id,
+      content: (
+        <Date value={president.dateConfirmed} color={'white'} format="DD/MM" />
+      )
+    },
+    {
+      content:(
+        <CustomStatus />
+      )
     },
   ],
 }));

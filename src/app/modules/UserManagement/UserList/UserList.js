@@ -8,7 +8,7 @@ import { CustomTable } from '../../../components';
 
 const UserList = () => {
 
-    const [users, setUsers] = useState([]);  
+    const [setUsers] = useState([]);  
     
     useEffect(() => {
         getUsers();

@@ -4,3 +4,4 @@ export { default as Footer } from './Footer';
 export { default as SideMenu } from './SideMenu';
 export { default as NotFound } from './NotFound';
 export { default as CustomTable } from './CustomTable';
+export { default as CustomStatus } from './CustomStatus';
