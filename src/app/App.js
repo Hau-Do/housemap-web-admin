@@ -8,7 +8,7 @@ import { RoutingLayout } from './router';
 const App = () => {
   
   return (
-    <div id="testing-adminlte">
+    <div id="hm-web-admin">
       <Router history = {history}>
         <Header />
         <SideMenu />

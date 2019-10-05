@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
@@ -7,11 +7,16 @@ import { Date } from '@atlaskit/date';
 import {
   DropdownItemCheckbox,
   DropdownItemGroupCheckbox,
+  DropdownItemGroup,
+  DropdownItem
 } from '@atlaskit/dropdown-menu';
 import Dropdown from '@atlaskit/dropdown-menu';
+import CalendarIcon from '@atlaskit/icon/glyph/calendar';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import Lozenge from '@atlaskit/lozenge';
+import { DateTimePicker } from '@atlaskit/datetime-picker';
 import CustomStatus from '../CustomStatus';
+import './CustomTable.scss';
 
 const getDropDownData = () => (
   <DropdownItemGroupCheckbox>
@@ -33,8 +38,12 @@ const getDropDownData = () => (
 
 const Wrapper = styled.div`
   min-width: 600px;
-  margin-top: 35px;
+  margin-top: 15px;
 `;
+
+const onChange = (value) => {
+  console.log('date time: ', value);
+};
 
 const createHead = (withWidth) => {
   return {
@@ -42,29 +51,101 @@ const createHead = (withWidth) => {
       {
         key: 'fullname',
         content: 'Họ & Tên',
-        width: withWidth ? 25 : undefined
+        width: withWidth ? 18 : undefined
       },
       {
         key: 'phone',
         content: 'Số điện thoại',
         shouldTruncate: true,
-        width: withWidth ? 15 : undefined
+        width: withWidth ? 12 : undefined
       },
       {
         key: 'create-date',
-        content: 'Ngày tạo',
+        content: (
+          <Dropdown
+            trigger={
+              <div className="calendar-container" style={{ display: 'flex' }}>
+                <span id="create-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
+                  <CalendarIcon/>
+                </span>
+                <label htmlFor="create-date-filter">Ngày tạo</label>
+              </div>
+            }
+          >
+            <div className="hm-date-time-picker" >
+              <DropdownItemGroup>
+                <div className="date-title">Từ ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+                <div className="date-title">Đến ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+              </DropdownItemGroup>
+            </div>
+          </Dropdown>
+        ),
         shouldTruncate: true,
         width: withWidth ? 10 : undefined
       },
       {
         key: 'register-date',
-        content: 'Ngày đăng ký',
+        content: (
+          <Dropdown
+            trigger={
+              <div className="calendar-container" style={{ display: 'flex' }}>
+                <span id="register-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
+                  <CalendarIcon/>
+                </span>
+                <label htmlFor="register-date-filter">Ngày ĐK</label>
+              </div>
+            }
+          >
+            <div className="hm-date-time-picker" >
+              <DropdownItemGroup>
+                <div className="date-title">Từ ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+                <div className="date-title">Đến ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+              </DropdownItemGroup>
+            </div>
+          </Dropdown>
+        ),
         shouldTruncate: true,
         width: withWidth ? 10 : undefined
       },
       {
         key: 'confirmed-date',
-        content: 'Ngày duyệt',
+        content: (
+          <Dropdown
+            trigger={
+              <div className="calendar-container" style={{ display: 'flex' }}>
+                <span id="confirmed-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
+                  <CalendarIcon/>
+                </span>
+                <label htmlFor="confirmed-date-filter">Ngày duyệt</label>
+              </div>
+            }
+          >
+            <div className="hm-date-time-picker" >
+              <DropdownItemGroup>
+                <div className="date-title">Từ ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+                <div className="date-title">Đến ngày</div>
+                <DropdownItem className="hm-dropdown-item">
+                  <DateTimePicker onChange={onChange} />
+                </DropdownItem>
+              </DropdownItemGroup>
+            </div>
+          </Dropdown>
+        ),
         shouldTruncate: true,
         width: withWidth ? 10 : undefined
       },
@@ -74,10 +155,10 @@ const createHead = (withWidth) => {
           <Dropdown
             trigger={
               <div className="status-container" style={{ display: 'flex' }}>
-                <label htmlFor="status-filter">Trạng thái</label>
-                <span id="status-filter" tabIndex="0" style={{ marginLeft: '24px' }}>
+                <span id="status-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
                   <FilterIcon/>
                 </span>
+                <label htmlFor="status-filter">Trạng thái</label>
               </div>
             }
           >
@@ -405,7 +486,7 @@ const rows = presidents.map((president, index) => ({
               )}.png`}
             />
           </AvatarWrapper>
-          <a href="http://localhost:3000/user-management">{president.nm}</a>
+          <a href="http://localhost:3000/user-management" style={{ color: '#595959' }}>{president.nm}</a>
         </NameWrapper>
       ),
     },
@@ -416,46 +497,72 @@ const rows = presidents.map((president, index) => ({
     {
       key: president.id,
       content: (
-        <Date value={president.dateCreated} color={'white'} format="DD/MM" />
+        <div className="tooltip-me">
+          <Date value={president.dateCreated} color={'white'} format="DD/MM" />
+          <span className="tooltiptext-me">Ngày tạo 30/09/2019. Người thực hiện: Lưu Kha</span>
+        </div>
       )
     },
     {
       key: president.id,
       content: (
-        <Date value={president.dateRegistered} color={'white'} format="DD/MM" />
+        <div className="tooltip-me">
+          <Date value={president.dateRegistered} color={'white'} format="DD/MM" />
+          <span className="tooltiptext-me">Ngày đăng ký 01/10/2019. Người thực hiện: Lưu Kha</span>
+        </div>
       )
     },
     {
       key: president.id,
       content: (
-        <Date value={president.dateConfirmed} color={'white'} format="DD/MM" />
+        <div className="tooltip-me">
+          <Date value={president.dateConfirmed} color={'white'} format="DD/MM" />
+          <span className="tooltiptext-me">Ngày duyệt 02/10/2019. Người thực hiện: Nguyễn Minh Khang</span>
+        </div>
       )
     },
     {
+      key: president.id,
       content:(
-        <CustomStatus />
+        <CustomStatus/>
       )
     },
   ],
 }));
 
 const CustomTable = () => {
+
+  const PAGES = [...Array(10)].map((_, i) => ({
+    label: i + 1,
+    href: `page-${i + 1}`,
+  }));
+
+  const [page, setPage] = useState(1);
+
+  const handleChange = (event, newPage) => setPage(newPage);
+
+  const Pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   return (
-    <Wrapper>
-      <DynamicTable
-        head={head}
-        rows={rows}
-        rowsPerPage={10}
-        defaultPage={1}
-        loadingSpinnerSize="large"
-        isLoading={false}
-        isFixedSize
-        defaultSortKey="term"
-        defaultSortOrder="ASC"
-        onSort={() => console.log('onSort')}
-        onSetPage={() => console.log('onSetPage')}
-      />
-    </Wrapper>
+    <div id="hm-custom-table">
+      <Wrapper>
+        <DynamicTable
+          head={head}
+          rows={rows}
+          rowsPerPage={10}
+          defaultPage={1}
+          loadingSpinnerSize="large"
+          isLoading={false}
+          defaultSortKey="term"
+          defaultSortOrder="ASC"
+          onSort={() => console.log('onSort')}
+          onSetPage={() => console.log('onSetPage')}
+        />
+      </Wrapper>
+      {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Pagination pages={Pages} onChange={handleChange} />
+      </div> */}
+    </div>
   );
 };
 

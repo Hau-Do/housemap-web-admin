@@ -1,0 +1,44 @@
+#hm-custom-table {
+    .container-drop {
+        outline: none;
+    }
+    .hm-date-time-picker {
+        height: 146px;
+        min-width: 260px;
+        .date-title {
+            padding: 0 8px;
+        }
+        .hm-dropdown-item {
+            padding-left: 7px;
+            padding-right: 7px;
+            div {
+                background-color: #F4F5F7;
+                border-radius: 3px;
+            }
+        }
+    }
+
+
+    .tooltip-me {
+        position: relative;
+        display: inline-block;
+    }
+    .tooltip-me .tooltiptext-me {
+        visibility: hidden;
+        min-width: 200px;
+        background-color: #403294;
+        color: #fff;
+        text-align: center;
+        border-radius: 3px;
+        padding: 4px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .tooltip-me:hover .tooltiptext-me {
+        visibility: visible;
+    }
+}

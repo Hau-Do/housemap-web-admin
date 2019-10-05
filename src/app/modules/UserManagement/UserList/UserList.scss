@@ -27,4 +27,17 @@
             font-size: 14px;
         }
     }
+
+    .ui.search {
+        min-width: 200px;
+        .prompt {
+            border-radius: 3px;
+        }
+        .input {
+            min-width: 247px;
+        }
+        .input>input:focus {
+            border-color: unset;
+        }
+    }
 }
