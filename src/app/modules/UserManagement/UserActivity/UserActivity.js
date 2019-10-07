@@ -1,10 +1,10 @@
-import './UserList.scss';
+import './UserActivity.scss';
 import React, { useState, useEffect } from 'react';
 
 import Button, { ButtonGroup } from '@atlaskit/button';
 
 import { getUserList } from '../../../services/UserService';
-import { CustomTable } from '../../../components';
+import { CustomTableUserActivity } from '../../../components';
 import {
     DropdownItemCheckbox,
     DropdownItemGroupCheckbox,
@@ -31,7 +31,7 @@ const getDropDownData = () => (
     </DropdownItemGroupCheckbox>
   );
 
-const UserList = () => {
+const UserActivity = () => {
 
     const [setUsers] = useState([]); 
     // const [date, setDate] = useState(new Date());
@@ -56,7 +56,7 @@ const UserList = () => {
         <div id="user-list">
             <div className="direction-path"><span>Người dùng</span></div>
             <div className="buttons-row">
-                <div className="new-user-mnmt-tile">Đang hoạt động</div>
+                <div className="new-user-mnmt-tile">Nhật ký hoạt động</div>
                 <ButtonGroup appearance="default">
                     <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
                 </ButtonGroup>
@@ -66,9 +66,9 @@ const UserList = () => {
               style={{ marginTop: '20px' }}
               placeholder="Search"
             />
-            <CustomTable />
+            <CustomTableUserActivity />
         </div>
     );
 };
 
-export default UserList;
+export default UserActivity;

@@ -5,3 +5,6 @@ export { default as SideMenu } from './SideMenu';
 export { default as NotFound } from './NotFound';
 export { default as CustomTable } from './CustomTable';
 export { default as CustomStatus } from './CustomStatus';
+export { default as CustomTableUserBlocked } from './CustomTableUserBlocked';
+export { default as CustomStatusUserBlocked } from './CustomStatusUserBlocked';
+export { default as CustomTableUserActivity } from './CustomTableUserActivity';

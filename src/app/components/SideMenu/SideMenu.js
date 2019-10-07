@@ -35,27 +35,27 @@ const SideMenu = () => {
             <a href="localhost:3000" className="nav-link active">
               <i className="nav-icon fas fa-tachometer-alt" />
               <p>
-                Dashboard
+                Người dùng
                 <i className="right fas fa-angle-left" />
               </p>
             </a>
             <ul className="nav nav-treeview">
               <li className="nav-item">
-                <Link to="/user-management" className="nav-link active">
+                <Link to="/user-activity" className="nav-link active">
                   <i className="far fa-circle nav-icon" />
-                  <p>Quản lý user mới</p>
+                  <p>Nhật ký hoạt động</p>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to="/user-management" className="nav-link">
                   <i className="far fa-circle nav-icon" />
-                  <p>Quản lý user leads</p>
+                  <p>Đang hoạt động</p>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to='/project-management' className="nav-link">
+                <Link to='/user-blocked' className="nav-link">
                   <i className="far fa-circle nav-icon" />
-                  <p>Quản lý dự án</p>
+                  <p>Đã khoá</p>
                 </Link>
               </li>
             </ul>

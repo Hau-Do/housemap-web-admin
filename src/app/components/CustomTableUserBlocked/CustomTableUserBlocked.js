@@ -15,8 +15,8 @@ import CalendarIcon from '@atlaskit/icon/glyph/calendar';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import Lozenge from '@atlaskit/lozenge';
 import { DateTimePicker } from '@atlaskit/datetime-picker';
-import CustomStatus from '../CustomStatus';
-import './CustomTable.scss';
+import CustomStatusUserBlocked from '../CustomStatusUserBlocked';
+import './CustomTableUserBlocked.scss';
 
 const getDropDownData = () => (
   <DropdownItemGroupCheckbox>
@@ -25,19 +25,14 @@ const getDropDownData = () => (
       <Lozenge appearance="default">NGƯỜI DÙNG</Lozenge>
     </DropdownItemCheckbox>
     <DropdownItemCheckbox >
-      <Lozenge appearance="moved">CHƯA THAM GIA</Lozenge>
-    </DropdownItemCheckbox>
-    <DropdownItemCheckbox >
-      <Lozenge appearance="inprogress">ĐĂNG KÝ BÁN</Lozenge>
-    </DropdownItemCheckbox>
-    <DropdownItemCheckbox >
-      <Lozenge appearance="success">ĐỐI TÁC</Lozenge>
+      <Lozenge appearance="removed">KHOÁ TÀI KHOẢN</Lozenge>
     </DropdownItemCheckbox>
   </DropdownItemGroupCheckbox>
 );
 
 const Wrapper = styled.div`
   min-width: 600px;
+  width: 600px;
   margin-top: 15px;
 `;
 
@@ -51,13 +46,7 @@ const createHead = (withWidth) => {
       {
         key: 'fullname',
         content: 'Họ & Tên',
-        width: withWidth ? 18 : undefined
-      },
-      {
-        key: 'phone',
-        content: 'Số điện thoại',
-        shouldTruncate: true,
-        width: withWidth ? 12 : undefined
+        width: withWidth ? 7 : undefined
       },
       {
         key: 'create-date',
@@ -68,7 +57,7 @@ const createHead = (withWidth) => {
                 <span id="create-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
                   <CalendarIcon/>
                 </span>
-                <label htmlFor="create-date-filter">Ngày tạo</label>
+                <label htmlFor="create-date-filter">Ngày khoá</label>
               </div>
             }
           >
@@ -87,67 +76,7 @@ const createHead = (withWidth) => {
           </Dropdown>
         ),
         shouldTruncate: true,
-        width: withWidth ? 10 : undefined
-      },
-      {
-        key: 'register-date',
-        content: (
-          <Dropdown
-            trigger={
-              <div className="calendar-container" style={{ display: 'flex' }}>
-                <span id="register-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
-                  <CalendarIcon/>
-                </span>
-                <label htmlFor="register-date-filter">Ngày ĐK</label>
-              </div>
-            }
-          >
-            <div className="hm-date-time-picker" >
-              <DropdownItemGroup>
-                <div className="date-title">Từ ngày</div>
-                <DropdownItem className="hm-dropdown-item">
-                  <DateTimePicker onChange={onChange} />
-                </DropdownItem>
-                <div className="date-title">Đến ngày</div>
-                <DropdownItem className="hm-dropdown-item">
-                  <DateTimePicker onChange={onChange} />
-                </DropdownItem>
-              </DropdownItemGroup>
-            </div>
-          </Dropdown>
-        ),
-        shouldTruncate: true,
-        width: withWidth ? 10 : undefined
-      },
-      {
-        key: 'confirmed-date',
-        content: (
-          <Dropdown
-            trigger={
-              <div className="calendar-container" style={{ display: 'flex' }}>
-                <span id="confirmed-date-filter" className="container-drop" tabIndex="0" style={{ marginRight: '4px' }}>
-                  <CalendarIcon/>
-                </span>
-                <label htmlFor="confirmed-date-filter">Ngày duyệt</label>
-              </div>
-            }
-          >
-            <div className="hm-date-time-picker" >
-              <DropdownItemGroup>
-                <div className="date-title">Từ ngày</div>
-                <DropdownItem className="hm-dropdown-item">
-                  <DateTimePicker onChange={onChange} />
-                </DropdownItem>
-                <div className="date-title">Đến ngày</div>
-                <DropdownItem className="hm-dropdown-item">
-                  <DateTimePicker onChange={onChange} />
-                </DropdownItem>
-              </DropdownItemGroup>
-            </div>
-          </Dropdown>
-        ),
-        shouldTruncate: true,
-        width: withWidth ? 10 : undefined
+        width: withWidth ? 5 : undefined
       },
       {
         key: 'status',
@@ -166,7 +95,7 @@ const createHead = (withWidth) => {
           </Dropdown>
         ),
         shouldTruncate: true,
-        width: withWidth ? 10 : undefined
+        width: withWidth ? 1 : undefined
       },
     ],
   };
@@ -477,7 +406,7 @@ const rows = presidents.map((president, index) => ({
       key: createKey(president.nm),
       content: (
         <NameWrapper>
-          <div className="account-user-container">
+          <div className="account-container">
             <AvatarWrapper>
               <Avatar
                 name={president.nm}
@@ -487,55 +416,33 @@ const rows = presidents.map((president, index) => ({
                 )}.png`}
               />
             </AvatarWrapper>
-            <div className="user-container">
+            <div className="info-container">
               <a href="http://localhost:3000/user-management" style={{ color: '#595959' }}>{president.nm}</a>
-              <div className="user-phone">0989748574</div>
+              <div className="phone-info">0989748574</div>
             </div>
           </div>
         </NameWrapper>
       ),
     },
     {
-      key: createKey(president.pp),
-      content: president.pp,
-    },
-    {
       key: president.id,
       content: (
         <div className="tooltip-me">
           <Date value={president.dateCreated} color={'white'} format="DD/MM" />
-          <span className="tooltiptext-me">Ngày tạo 30/09/2019. Người thực hiện: Lưu Kha</span>
-        </div>
-      )
-    },
-    {
-      key: president.id,
-      content: (
-        <div className="tooltip-me">
-          <Date value={president.dateRegistered} color={'white'} format="DD/MM" />
-          <span className="tooltiptext-me">Ngày đăng ký 01/10/2019. Người thực hiện: Lưu Kha</span>
-        </div>
-      )
-    },
-    {
-      key: president.id,
-      content: (
-        <div className="tooltip-me">
-          <Date value={president.dateConfirmed} color={'white'} format="DD/MM" />
-          <span className="tooltiptext-me">Ngày duyệt 02/10/2019. Người thực hiện: Nguyễn Minh Khang</span>
+          <span className="tooltiptext-me">Khoá lúc 30/09/2019. Người thực hiện: Nhã Thư Kỳ</span>
         </div>
       )
     },
     {
       key: president.id,
       content:(
-        <CustomStatus/>
+        <CustomStatusUserBlocked/>
       )
     },
   ],
 }));
 
-const CustomTable = () => {
+const CustomTableUserBlocked = () => {
 
   const PAGES = [...Array(10)].map((_, i) => ({
     label: i + 1,
@@ -549,7 +456,7 @@ const CustomTable = () => {
   const Pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div id="hm-custom-table">
+    <div id="hm-custom-table-user-blocked">
       <Wrapper>
         <DynamicTable
           head={head}
@@ -571,4 +478,4 @@ const CustomTable = () => {
   );
 };
 
-export default CustomTable;
+export default CustomTableUserBlocked;
