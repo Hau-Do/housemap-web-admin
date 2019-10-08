@@ -419,7 +419,7 @@ const rows = presidents.map((president, index) => ({
             </AvatarWrapper>
             <div className="info-container">
               <a href="http://localhost:3000/user-management" style={{ color: '#595959' }}>{president.nm}</a>
-              <div className="phone-info">0989748574</div>
+              <div className="phone-info">{president.pp}</div>
             </div>
           </div>
         </NameWrapper>

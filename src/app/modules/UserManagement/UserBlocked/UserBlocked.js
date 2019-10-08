@@ -56,10 +56,8 @@ const UserBlocked = () => {
         <div id="user-list">
             <div className="direction-path"><span>Người dùng</span></div>
             <div className="buttons-row">
-                <div className="new-user-mnmt-tile">Đã khoá</div>
-                <ButtonGroup appearance="default">
-                    <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
-                </ButtonGroup>
+              <div className="new-user-mnmt-tile">Đã khoá</div>
+              <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
             </div>
             {/* <DateTimePicker onChange={onChange} timeIsEditable value={date}/> */}
             <Search 

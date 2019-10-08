@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Lozenge from '@atlaskit/lozenge';
 import Arrow from '@atlaskit/icon/glyph/arrow-right';
 import DropdownMenu, { DropdownItemGroup, DropdownItem } from '@atlaskit/dropdown-menu';
-import './CustomStatus.scss';
+import './UserStatus.scss';
 import { CreatableSelect } from '@atlaskit/select';
 import { Dropdown } from 'semantic-ui-react'
 
@@ -14,7 +14,7 @@ const JiraItem = styled.div`
   width: 120px;
 `;
 
-const CustomStatus = () => {
+const UserStatus = () => {
 
   const [status, setStatus] = useState('status-1');
 
@@ -74,4 +74,4 @@ const CustomStatus = () => {
   );
 };
 
-export default CustomStatus;
+export default UserStatus;
