@@ -25,7 +25,7 @@ const getDropDownData = () => (
       <Lozenge appearance="default">NGƯỜI DÙNG</Lozenge>
     </DropdownItemCheckbox>
     <DropdownItemCheckbox >
-      <Lozenge appearance="removed">KHOÁ TÀI KHOẢN</Lozenge>
+      <Lozenge appearance="removed" className="account-block-container">KHOÁ TÀI KHOẢN</Lozenge>
     </DropdownItemCheckbox>
   </DropdownItemGroupCheckbox>
 );
@@ -90,6 +90,7 @@ const createHead = (withWidth) => {
                 <label htmlFor="status-filter">Trạng thái</label>
               </div>
             }
+            className="status-user-block-container"
           >
             {getDropDownData()}
           </Dropdown>
