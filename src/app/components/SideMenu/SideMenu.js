@@ -23,7 +23,7 @@ const SideMenu = () => {
           <img src={avatar} className="img-circle" alt="u" style={{ height: '42px', width: '42px', objectFit: 'cover' }}/>
         </div>
         <div className="info">
-          <a href="localhost:3000" className="d-block">Alexander Pierce</a>
+          <a href="localhost:3000" className="d-block">Peter Do</a>
         </div>
       </div>
       {/* Sidebar Menu */}
@@ -41,13 +41,13 @@ const SideMenu = () => {
             </a>
             <ul className="nav nav-treeview">
               <li className="nav-item">
-                <Link to="/user-activity" className="nav-link active">
+                <Link to="/user-activity" className="nav-link">
                   <i className="far fa-circle nav-icon" />
                   <p>Nhật ký hoạt động</p>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/user-management" className="nav-link">
+                <Link to="/user-management" className="nav-link active">
                   <i className="far fa-circle nav-icon" />
                   <p>Đang hoạt động</p>
                 </Link>
