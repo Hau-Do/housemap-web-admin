@@ -1,35 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import Avatar from '@atlaskit/avatar';
 import { Date } from '@atlaskit/date';
 import {
-  DropdownItemCheckbox,
-  DropdownItemGroupCheckbox,
   DropdownItemGroup,
   DropdownItem
 } from '@atlaskit/dropdown-menu';
 import Dropdown from '@atlaskit/dropdown-menu';
 import CalendarIcon from '@atlaskit/icon/glyph/calendar';
-import FilterIcon from '@atlaskit/icon/glyph/filter';
-import Lozenge from '@atlaskit/lozenge';
 import { DateTimePicker } from '@atlaskit/datetime-picker';
-import CustomStatusUserBlocked from '../CustomStatusUserBlocked';
 import './CustomTableUserActivity.scss';
 import { presidents } from '../../constants/MockData';
-
-const getDropDownData = () => (
-  <DropdownItemGroupCheckbox>
-    <DropdownItemCheckbox defaultSelected id="all">ALL</DropdownItemCheckbox>
-    <DropdownItemCheckbox >
-      <Lozenge appearance="default">NGƯỜI DÙNG</Lozenge>
-    </DropdownItemCheckbox>
-    <DropdownItemCheckbox >
-      <Lozenge appearance="removed">KHOÁ TÀI KHOẢN</Lozenge>
-    </DropdownItemCheckbox>
-  </DropdownItemGroupCheckbox>
-);
 
 const Wrapper = styled.div`
   min-width: 600p;
@@ -169,17 +152,6 @@ const rows = presidents.map((president, index) => ({
 }));
 
 const CustomTableUserActivity = () => {
-
-  const PAGES = [...Array(10)].map((_, i) => ({
-    label: i + 1,
-    href: `page-${i + 1}`,
-  }));
-
-  const [page, setPage] = useState(1);
-
-  const handleChange = (event, newPage) => setPage(newPage);
-
-  const Pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <div id="hm-custom-table-user-activity">

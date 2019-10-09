@@ -1,5 +1,5 @@
 import './CustomTable.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import { Date } from '@atlaskit/date';

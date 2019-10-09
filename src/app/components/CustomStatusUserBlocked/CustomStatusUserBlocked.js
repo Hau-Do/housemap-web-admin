@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Lozenge from '@atlaskit/lozenge';
 import Arrow from '@atlaskit/icon/glyph/arrow-right';
-import DropdownMenu, { DropdownItemGroup, DropdownItem } from '@atlaskit/dropdown-menu';
 import './CustomStatusUserBlocked.scss';
-import { CreatableSelect } from '@atlaskit/select';
 import { Dropdown } from 'semantic-ui-react'
 
 

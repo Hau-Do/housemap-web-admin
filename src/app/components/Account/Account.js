@@ -1,5 +1,5 @@
 import './Account.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Avatar from '@atlaskit/avatar';
 

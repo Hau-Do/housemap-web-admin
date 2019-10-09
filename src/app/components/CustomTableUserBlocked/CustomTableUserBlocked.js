@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
@@ -444,17 +444,6 @@ const rows = presidents.map((president, index) => ({
 }));
 
 const CustomTableUserBlocked = () => {
-
-  const PAGES = [...Array(10)].map((_, i) => ({
-    label: i + 1,
-    href: `page-${i + 1}`,
-  }));
-
-  const [page, setPage] = useState(1);
-
-  const handleChange = (event, newPage) => setPage(newPage);
-
-  const Pages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <div id="hm-custom-table-user-blocked">

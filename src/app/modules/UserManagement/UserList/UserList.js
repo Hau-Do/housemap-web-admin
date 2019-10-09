@@ -1,8 +1,6 @@
 import './UserList.scss';
 import React, { useState, useEffect } from 'react';
-
-import Button, { ButtonGroup } from '@atlaskit/button';
-
+import Button from '@atlaskit/button';
 import { getUserList } from '../../../services/UserService';
 import { CustomTable } from '../../../components';
 import { Search } from 'semantic-ui-react'

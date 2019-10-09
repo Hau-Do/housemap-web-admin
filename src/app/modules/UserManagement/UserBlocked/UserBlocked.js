@@ -1,35 +1,11 @@
 import './UserBlocked.scss';
 import React, { useState, useEffect } from 'react';
 
-import Button, { ButtonGroup } from '@atlaskit/button';
+import Button from '@atlaskit/button';
 
 import { getUserList } from '../../../services/UserService';
 import { CustomTableUserBlocked } from '../../../components';
-import {
-    DropdownItemCheckbox,
-    DropdownItemGroupCheckbox,
-  } from '@atlaskit/dropdown-menu';
-import Lozenge from '@atlaskit/lozenge';
 import { Search } from 'semantic-ui-react'
-import { DateTimePicker } from '@atlaskit/datetime-picker';
-
-const getDropDownData = () => (
-    <DropdownItemGroupCheckbox>
-      <DropdownItemCheckbox defaultSelected id="all">ALL</DropdownItemCheckbox>
-      <DropdownItemCheckbox >
-        <Lozenge appearance="default">NGƯỜI DÙNG</Lozenge>
-      </DropdownItemCheckbox>
-      <DropdownItemCheckbox >
-        <Lozenge appearance="moved">CHƯA THAM GIA</Lozenge>
-      </DropdownItemCheckbox>
-      <DropdownItemCheckbox >
-        <Lozenge appearance="inprogress">ĐĂNG KÝ BÁN</Lozenge>
-      </DropdownItemCheckbox>
-      <DropdownItemCheckbox >
-        <Lozenge appearance="success">ĐỐI TÁC</Lozenge>
-      </DropdownItemCheckbox>
-    </DropdownItemGroupCheckbox>
-  );
 
 const UserBlocked = () => {
 
@@ -47,11 +23,6 @@ const UserBlocked = () => {
         };
     });
 
-    // const onChange = (value) => {
-    //   console.log('UserList - date time: ', value);
-    //   setDate(value);
-    // };
-    
     return(
         <div id="user-list">
             <div className="direction-path"><span>Người dùng</span></div>
@@ -59,7 +30,6 @@ const UserBlocked = () => {
               <div className="new-user-mnmt-tile">Đã khoá</div>
               <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
             </div>
-            {/* <DateTimePicker onChange={onChange} timeIsEditable value={date}/> */}
             <Search 
               style={{ marginTop: '20px' }}
               placeholder="Search"
