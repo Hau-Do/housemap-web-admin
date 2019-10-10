@@ -8,32 +8,26 @@ import { Popup } from 'semantic-ui-react';
 const UserStatusFilter = () => {
   const chbxList = [
     {
-      label: 'TẤT CẢ',
+      label: 'NGƯỜI DÙNG',
       index: 0,
       value: false,
       color: "default"
     },
     {
-      label: 'NGƯỜI DÙNG',
-      index: 1,
-      value: false,
-      color: "default"
-    },
-    {
       label: 'CHƯA THAM GIA',
-      index: 2,
+      index: 1,
       value: false,
       color: "moved"
     },
     {
       label: 'ĐĂNG KÝ BÁN',
-      index: 3,
+      index: 2,
       value: false,
       color: "inprogress"
     },
     {
       label: 'ĐỐI TÁC',
-      index: 4,
+      index: 3,
       value: false,
       color: "success"
     }
