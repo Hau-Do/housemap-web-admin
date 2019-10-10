@@ -12,12 +12,13 @@ const JiraItem = styled.div`
   width: 120px;
 `;
 
-const UserStatus = () => {
+const UserStatus = ({ value, onChangeStatus }) => {
 
-  const [status, setStatus] = useState('status-1');
+  const [status, setStatus] = useState(value);
 
   const handleChange = (e, { value }) => {
     setStatus(value);
+    onChangeStatus(value);
   };
 
   const options = [

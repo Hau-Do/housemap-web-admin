@@ -1,7 +1,6 @@
 import './UserList.scss';
 import React, { useState, useEffect } from 'react';
 import Button from '@atlaskit/button';
-import { getUserList } from '../../../services/UserService';
 import { HmDateTimePicker, UserStatusFilter, Account, UserStatus } from '../../../components';
 import { Search } from 'semantic-ui-react'
 import styled from 'styled-components';
@@ -23,19 +22,7 @@ function createKey(input) {
 
 const UserList = () => {
 
-    const [setUsers] = useState([]); 
-    // const [date, setDate] = useState(new Date());
-    
-    useEffect(() => {
-        getUsers();
-        async function getUsers() {
-            const res = await getUserList();
-            if(res && res.data) {
-                setUsers(res.data);
-                console.log('OK');
-            }
-        };
-    });
+  const [users, setUsers] = useState([]); 
 
     const createHead = (withWidth) => {
       return {
@@ -80,8 +67,9 @@ const UserList = () => {
         ],
       };
     };
-  
-    const rows = presidents.map((president, index) => ({
+    const head = createHead(true);
+
+    const rows = users.map((president, index) => ({
       key: `row-${index}-${president.nm}`,
       cells: [
         {
@@ -120,13 +108,30 @@ const UserList = () => {
         {
           key: president.id,
           content:(
-            <UserStatus/>
+            <UserStatus value={president.status} onChangeStatus={(value) => changeStatus(index, value)}/>
           )
         },
       ],
     }));
-  
-    const head = createHead(true);
+    
+    useEffect(() => {
+        getUsers();
+        async function getUsers() {
+            // const res = await getUserList();
+            // if(res && res.data) {
+            //     setUsers(res.data);
+            // }
+            setUsers(presidents);
+        };
+    }, []);
+
+    const changeStatus = (index, status) => {
+      console.log('index, status: ', index, status);
+      let newUsers = [...users];
+      newUsers[index].status = status; 
+      setUsers(newUsers);
+      console.log('users: ', users);
+    }
 
     return(
       <div id="user-list">
