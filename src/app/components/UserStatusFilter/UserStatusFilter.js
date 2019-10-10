@@ -1,39 +1,50 @@
 import './UserStatusFilter.scss';
 import React, { useState } from 'react';
-import Dropdown, 
-{
-  DropdownItemCheckbox,
-  DropdownItemGroupCheckbox
-} from '@atlaskit/dropdown-menu';
 import Lozenge from '@atlaskit/lozenge';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import { Checkbox } from 'semantic-ui-react';
-import { Popup } from 'semantic-ui-react'
-
+import { Popup } from 'semantic-ui-react';
 
 const UserStatusFilter = () => {
-
-  const [checkUser, setCheckUser] = useState(false);
-  const [checkNotJoin, setCheckNotJoin] = useState(false);
-  const [checkRegisterSell, setCheckRegisterSell] = useState(false);
-  const [checkPartner, setCheckPartner] = useState(false);
+  const chbxList = [
+    {
+      label: 'TẤT CẢ',
+      index: 0,
+      value: false,
+      color: "default"
+    },
+    {
+      label: 'NGƯỜI DÙNG',
+      index: 1,
+      value: false,
+      color: "default"
+    },
+    {
+      label: 'CHƯA THAM GIA',
+      index: 2,
+      value: false,
+      color: "moved"
+    },
+    {
+      label: 'ĐĂNG KÝ BÁN',
+      index: 3,
+      value: false,
+      color: "inprogress"
+    },
+    {
+      label: 'ĐỐI TÁC',
+      index: 4,
+      value: false,
+      color: "success"
+    }
+  ];
+  const [checkboxList, setCheckboxList] = useState(chbxList);
 
   const toggle = (e, data) => {
     const { name, checked } = data;
-    switch(name) {
-      case 'status-1': 
-        setCheckUser(checked);
-        break;
-      case 'status-2': 
-        setCheckNotJoin(checked);
-        break;
-      case 'status-3': 
-        setCheckRegisterSell(checked);
-        break;
-      case 'status-4': 
-        setCheckPartner(checked);
-        break;
-    }
+    let chbxList = [...checkboxList];
+    chbxList[name].value = checked; 
+    setCheckboxList(chbxList);
   }
 
   return (
@@ -49,30 +60,14 @@ const UserStatusFilter = () => {
         }
         content={
           <div className="checkbox-item-container" style={{ display: 'inline-grid' }}>
-            <Checkbox 
-              name="status-1"
-              label={<label><Lozenge appearance="default">NGƯỜI DÙNG</Lozenge></label>}
-              onChange={toggle}
-              checked={checkUser}
-            />
-            <Checkbox 
-              name="status-2"
-              label={<label><Lozenge appearance="moved">CHƯA THAM GIA</Lozenge></label>}
-              onChange={toggle}
-              checked={checkNotJoin}
-            />
-            <Checkbox 
-              name="status-3"
-              label={<label><Lozenge appearance="inprogress">ĐĂNG KÝ BÁN</Lozenge></label>}
-              onChange={toggle}
-              checked={checkRegisterSell}
-            />
-            <Checkbox 
-              name="status-4"
-              label={<label><Lozenge appearance="success">ĐỐI TÁC</Lozenge></label>}
-              onChange={toggle}
-              checked={checkPartner}
-            />
+            {checkboxList.map((item) =>
+              <Checkbox 
+                name={item.index}
+                label={<label>{item.label==='TẤT CẢ' ? 'TẤT CẢ': <Lozenge appearance={item.color}>{item.label}</Lozenge>}</label>}
+                onChange={toggle}
+                checked={item.value}
+              />)
+            }
           </div>
         }
         on='click'
