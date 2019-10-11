@@ -162,6 +162,9 @@ const UserList = () => {
   }
 
   const filterRange = (start, end, listUser, filterBy) => {
+    if(!start && !end){
+      return presidents;
+    }
     let resUsers = [];
     listUser.forEach((user) => {
       if(start <= user[`${filterBy}`] && user[`${filterBy}`] <= end){
