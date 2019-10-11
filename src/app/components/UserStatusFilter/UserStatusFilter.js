@@ -4,41 +4,20 @@ import Lozenge from '@atlaskit/lozenge';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import { Checkbox } from 'semantic-ui-react';
 import { Popup } from 'semantic-ui-react';
+import { chbxListStatus } from '../../constants/MockData';
 
-const UserStatusFilter = () => {
-  const chbxList = [
-    {
-      label: 'NGƯỜI DÙNG',
-      index: 0,
-      value: false,
-      color: "default"
-    },
-    {
-      label: 'CHƯA THAM GIA',
-      index: 1,
-      value: false,
-      color: "moved"
-    },
-    {
-      label: 'ĐĂNG KÝ BÁN',
-      index: 2,
-      value: false,
-      color: "inprogress"
-    },
-    {
-      label: 'ĐỐI TÁC',
-      index: 3,
-      value: false,
-      color: "success"
-    }
-  ];
-  const [checkboxList, setCheckboxList] = useState(chbxList);
+const UserStatusFilter = ({ onFilterStatus }) => {
+
+  const [checkboxList, setCheckboxList] = useState(chbxListStatus);
 
   const toggle = (e, data) => {
     const { name, checked } = data;
     let chbxList = [...checkboxList];
     chbxList[name].value = checked; 
     setCheckboxList(chbxList);
+    
+    let items = chbxList.filter((obj) => obj.value === true);
+    onFilterStatus(items);
   }
 
   return (

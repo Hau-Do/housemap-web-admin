@@ -6,7 +6,7 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-2'
+      status: 'status-2',
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-3'
+      status: 'status-3',
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-3'
+      status: 'status-3',
     },
     {
       id: 4,
@@ -314,4 +314,35 @@ export const presidents = [
       dateConfirmed: 1569949200000,
       status: 'status-1'
     },
+];
+
+export const chbxListStatus = [
+  {
+    label: 'NGƯỜI DÙNG',
+    id: 'status-1',
+    index: 0,
+    value: false,
+    color: "default"
+  },
+  {
+    label: 'CHƯA THAM GIA',
+    id: 'status-2',
+    index: 1,
+    value: false,
+    color: "moved"
+  },
+  {
+    label: 'ĐĂNG KÝ BÁN',
+    id: 'status-3',
+    index: 2,
+    value: false,
+    color: "inprogress"
+  },
+  {
+    label: 'ĐỐI TÁC',
+    id: 'status-4',
+    index: 3,
+    value: false,
+    color: "success"
+  }
 ];
