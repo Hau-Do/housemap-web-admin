@@ -1,36 +1,32 @@
-.status-dropdown-item {
-    .status-dropdown-group {
-        height: auto;
-        min-width: 300px;
-    }
-    .Droplist__Content-sc-1z05y4v-1 {
-        // overflow: unset;
-    }
-
-    .ui.selection.dropdown {
-        min-width: 11em !important;
-        width: 11em !important;
-    }
-    .ui.selection.active.dropdown {
-        border-color: unset !important;
-    }
-    .ui.selection.active.dropdown .menu {
-        border-color: unset !important;
-    }
-    .ui.selection.dropdown:focus {
-        border-color: unset !important;
-    }
-    .ui.upward.selection.dropdown {
-        min-width: 11em !important;
-        width: 11em !important;
-    }
-    .menu {
-        min-width: 330px !important;
-        .item {
-            display: flex !important;
+#hm-date-time-picker {
+    min-height: 126px;
+    min-width: 230px;
+    .date-title {
+        color: #6C798F;
+        font-size: 12px;
+        font-weight: 600;
+        &.end {
+            padding-top: 6px;
         }
-        .active.item {
-            font-weight: unset !important;
+    }
+    .hm-dropdown-item {
+        div {
+            background-color: #F4F5F7;
+            border-radius: 3px;
         }
+        .css-1g48xl4-IndicatorsContainer {
+            padding-right: 8px;
+            .sc-bdVaJa.ixkqUR {
+                color: #42526ea1;
+            }
+        }
+        .css-lrg2au-singleValue {
+            color: #7A869A;
+            font-size: 14px;
+        }
+    }
+    .filter-datetime-btn {
+        float: right;
+        margin-top: 10px;
     }
 }

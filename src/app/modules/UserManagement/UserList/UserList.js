@@ -35,14 +35,24 @@ const UserList = () => {
         {
           key: 'create-date',
           content: (
-            <HmDateTimePicker />
+            <HmDateTimePicker 
+              title="Ngày tạo"
+              onChangeDateTimeStart={value => console.log('Created date - start: ', value)}
+              onChangeDateTimeEnd={value => console.log('Created date - end: ', value)}
+              onFilterRange={(start, end) => filterRangeCreatedDate(start, end)}
+            />
           ),
           width: withWidth ? 10 : undefined
         },
         {
           key: 'register-date',
           content: (
-            <HmDateTimePicker />
+            <HmDateTimePicker 
+              title="Ngày ĐK"
+              onChangeDateTimeStart={value => console.log('Registered date - start: ', value)}
+              onChangeDateTimeEnd={value => console.log('Registered date - end: ', value)}
+              onFilterRange={(start, end) => filterRangeRegisteredDate(start, end)}
+            />
           ),
           shouldTruncate: true,
           width: withWidth ? 10 : undefined
@@ -50,7 +60,12 @@ const UserList = () => {
         {
           key: 'confirmed-date',
           content: (
-            <HmDateTimePicker />
+            <HmDateTimePicker 
+              title="Ngày duyệt"
+              onChangeDateTimeStart={value => console.log('Confirmed date - start: ', value)}
+              onChangeDateTimeEnd={value => console.log('Confirmed date - end: ', value)}
+              onFilterRange={(start, end) => filterRangeConfirmedDate(start, end)}
+            />
           ),
           shouldTruncate: true,
           width: withWidth ? 10 : undefined
@@ -146,12 +161,37 @@ const UserList = () => {
     }
   }
 
+  const filterRange = (start, end, listUser, filterBy) => {
+    let resUsers = [];
+    listUser.forEach((user) => {
+      if(start <= user[`${filterBy}`] && user[`${filterBy}`] <= end){
+        resUsers.push(user);
+      }
+    });
+    return resUsers;
+  }
+
+  const filterRangeCreatedDate = (start, end) => {
+    let filteredUsers = filterRange(start, end, presidents, 'dateCreated');
+    setUsers(filteredUsers);
+  }
+
+  const filterRangeRegisteredDate = (start, end) => {
+    let filteredUsers = filterRange(start, end, presidents, 'dateRegistered');
+    setUsers(filteredUsers);
+  }
+
+  const filterRangeConfirmedDate = (start, end) => {
+    let filteredUsers = filterRange(start, end, presidents, 'dateConfirmed');
+    setUsers(filteredUsers);
+  }
+
   return(
     <div id="user-list">
       <div className="direction-path"><span>Người dùng</span></div>
       <div className="buttons-row">
         <div className="new-user-mnmt-tile">Đang hoạt động</div>
-        <Button className="btn-custom" onClick={() => {}}>Google Sheet</Button>
+        <Button className="btn-custom" onClick={() => console.log('clicked GG Sheet')}>Google Sheet</Button>
       </div>
       <Search 
         style={{ marginTop: '20px' }}
