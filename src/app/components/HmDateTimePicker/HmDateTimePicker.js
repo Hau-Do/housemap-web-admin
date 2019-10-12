@@ -9,8 +9,8 @@ import Button from '@atlaskit/button';
 
 const HmDateTimePicker = ({ title, onChangeDateTimeStart, onChangeDateTimeEnd, onFilterRange }) => {
 
-  const [startDate, setStartDate] = useState(Moment.utc(new Date()).local().format('DD/MM/YYYY HH:mm'));
-  const [endDate, setEndDate] = useState(Moment.utc(new Date()).local().format('DD/MM/YYYY HH:mm'));
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
   const updateStart = (value) => {
     setStartDate(value);
@@ -29,8 +29,8 @@ const HmDateTimePicker = ({ title, onChangeDateTimeStart, onChangeDateTimeEnd, o
   }
 
   const clear = () => {
-    setStartDate(null);
-    setEndDate(null);
+    setStartDate(new Date());
+    setEndDate(new Date());
     onFilterRange(null, null);
   }
 
@@ -63,8 +63,8 @@ const HmDateTimePicker = ({ title, onChangeDateTimeStart, onChangeDateTimeEnd, o
                 onChange={(value) => updateEnd(value)} 
                 value={endDate}/>
             </div>
-            <Button className="filter-datetime-btn" onClick={clear}>ClearX</Button>
             <Button className="filter-datetime-btn" onClick={filter}>Filter</Button>
+            <Button className="filter-datetime-btn" onClick={clear} style={{marginRight: '8px'}}>Clear</Button>
           </div>
         }
         on='click'
