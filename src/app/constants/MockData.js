@@ -7,6 +7,7 @@ export const presidents = [
       dateRegistered: 1564419600000,
       dateConfirmed: 1569862800000,
       status: 'status-2',
+      blockedStatus: 'status-1'
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ export const presidents = [
       dateRegistered: 1569862800000,
       dateConfirmed: 1569862800000,
       status: 'status-3',
+      blockedStatus: 'status-1'
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ export const presidents = [
       dateRegistered: 1564419600000,
       dateConfirmed: 1569862800000,
       status: 'status-3',
+      blockedStatus: 'status-1'
     },
     {
       id: 4,
@@ -33,7 +36,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569862800000,
-      status: 'status-4'
+      status: 'status-4',
+      blockedStatus: 'status-1'
     },
     {
       id: 5,
@@ -42,7 +46,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569862800000,
-      status: 'status-4'
+      status: 'status-4',
+      blockedStatus: 'status-1'
     },
     {
       id: 6,
@@ -51,7 +56,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-4'
+      status: 'status-4',
+      blockedStatus: 'status-1'
     },
     {
       id: 7,
@@ -60,7 +66,8 @@ export const presidents = [
       dateCreated: 1559322000000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 8,
@@ -69,7 +76,8 @@ export const presidents = [
       dateCreated: 1559322000000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-5'
     },
     {
       id: 9,
@@ -78,7 +86,8 @@ export const presidents = [
       dateCreated: 1559494800000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-5'
     },
     {
       id: 10,
@@ -87,7 +96,8 @@ export const presidents = [
       dateCreated: 1559494800000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-5'
     },
     {
       id: 11,
@@ -96,7 +106,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570208400000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 12,
@@ -105,7 +116,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570208400000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 13,
@@ -114,7 +126,8 @@ export const presidents = [
       dateCreated: 1559581200000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570208400000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 14,
@@ -123,7 +136,8 @@ export const presidents = [
       dateCreated: 1559581200000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 15,
@@ -132,7 +146,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570640400000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 16,
@@ -141,7 +156,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570640400000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 17,
@@ -150,7 +166,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1564419600000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 18,
@@ -159,7 +176,8 @@ export const presidents = [
       dateCreated: 1564246800000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 19,
@@ -168,7 +186,8 @@ export const presidents = [
       dateCreated: 1564246800000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570726800000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 20,
@@ -177,7 +196,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570726800000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 21,
@@ -186,7 +206,8 @@ export const presidents = [
       dateCreated: 1564246800000,
       dateRegistered: 1564419600000,
       dateConfirmed: 1570726800000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 22,
@@ -195,7 +216,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1570726800000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 23,
@@ -204,7 +226,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 24,
@@ -213,7 +236,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 25,
@@ -222,7 +246,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 26,
@@ -231,7 +256,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 27,
@@ -240,7 +266,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 28,
@@ -249,7 +276,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 29,
@@ -258,7 +286,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 30,
@@ -267,7 +296,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 31,
@@ -276,7 +306,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 32,
@@ -285,7 +316,8 @@ export const presidents = [
       dateCreated: 1569776400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 33,
@@ -294,7 +326,8 @@ export const presidents = [
       dateCreated: 1570640400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 34,
@@ -303,7 +336,8 @@ export const presidents = [
       dateCreated: 1570640400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
     {
       id: 35,
@@ -312,7 +346,8 @@ export const presidents = [
       dateCreated: 1570640400000,
       dateRegistered: 1569862800000,
       dateConfirmed: 1569949200000,
-      status: 'status-1'
+      status: 'status-1',
+      blockedStatus: 'status-1'
     },
 ];
 
@@ -344,5 +379,22 @@ export const chbxListStatus = [
     index: 3,
     value: false,
     color: "success"
+  }
+];
+
+export const chbxListBlockedStatus = [
+  {
+    label: 'NGƯỜI DÙNG',
+    id: 'status-1',
+    index: 0,
+    value: false,
+    color: "default"
+  },
+  {
+    label: 'KHOÁ TÀI KHOẢN',
+    id: 'status-5',
+    index: 1,
+    value: false,
+    color: "removed"
   }
 ];

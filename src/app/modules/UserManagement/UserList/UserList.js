@@ -6,8 +6,8 @@ import { Input } from 'semantic-ui-react'
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import { Date } from '@atlaskit/date';
-import { presidents } from '../../../constants/MockData';
-import { createKey } from '../../../constants/Constant';
+import { presidents, chbxListStatus } from '../../../constants/MockData';
+import { createKey, optionsActiveStatus } from '../../../constants/Constant';
 
 
 const Wrapper = styled.div`
@@ -71,7 +71,7 @@ const UserList = () => {
         {
           key: 'status',
           content: (
-            <UserStatusFilter onFilterStatus={value => filterStatus(value)} />
+            <UserStatusFilter options={chbxListStatus} onFilterStatus={value => filterStatus(value)} />
           ),
           shouldTruncate: true,
           width: withWidth ? 1 : undefined
@@ -120,7 +120,7 @@ const UserList = () => {
       {
         key: president.id,
         content:(
-          <UserStatus value={president.status} onChangeStatus={(value) => changeStatus(index, value)}/>
+          <UserStatus options={optionsActiveStatus} value={president.status} onChangeStatus={(value) => changeStatus(index, value)}/>
         )
       },
     ],

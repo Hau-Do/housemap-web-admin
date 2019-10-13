@@ -4,11 +4,10 @@ import Lozenge from '@atlaskit/lozenge';
 import FilterIcon from '@atlaskit/icon/glyph/filter';
 import { Checkbox } from 'semantic-ui-react';
 import { Popup } from 'semantic-ui-react';
-import { chbxListStatus } from '../../constants/MockData';
 
-const UserStatusFilter = ({ onFilterStatus }) => {
+const UserStatusFilter = ({ options, onFilterStatus }) => {
 
-  const [checkboxList, setCheckboxList] = useState(chbxListStatus);
+  const [checkboxList, setCheckboxList] = useState(options);
 
   const toggle = (e, data) => {
     const { name, checked } = data;

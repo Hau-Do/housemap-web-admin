@@ -7,5 +7,3 @@ export { default as UserStatus } from './UserStatus';
 export { default as UserStatusFilter } from './UserStatusFilter';
 export { default as HmDateTimePicker } from './HmDateTimePicker';
 export { default as Account } from './Account';
-export { default as CustomTableUserBlocked } from './CustomTableUserBlocked';
-export { default as CustomStatusUserBlocked } from './CustomStatusUserBlocked';
