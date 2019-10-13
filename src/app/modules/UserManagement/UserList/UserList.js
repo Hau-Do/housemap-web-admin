@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import { Date } from '@atlaskit/date';
 import { presidents } from '../../../constants/MockData';
+import { createKey } from '../../../constants/Constant';
 
 
 const Wrapper = styled.div`
@@ -14,10 +15,6 @@ const Wrapper = styled.div`
   width: 900px;
   margin-top: 15px;
 `;
-
-function createKey(input) {
-  return input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
-}
 
 const UserList = () => {
 
