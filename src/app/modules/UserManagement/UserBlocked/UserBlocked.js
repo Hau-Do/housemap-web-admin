@@ -21,7 +21,7 @@ const UserBlocked = () => {
                 console.log('OK');
             }
         };
-    });
+    }, []);
 
     return(
         <div id="user-list">
