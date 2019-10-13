@@ -2,7 +2,7 @@ import './UserList.scss';
 import React, { useState, useEffect } from 'react';
 import Button from '@atlaskit/button';
 import { HmDateTimePicker, UserStatusFilter, Account, UserStatus } from '../../../components';
-import { Search } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
 import { Date } from '@atlaskit/date';
@@ -22,6 +22,7 @@ function createKey(input) {
 const UserList = () => {
 
   const [users, setUsers] = useState([]); 
+  const [keyword, setKeyword] = useState('');
 
   const createHead = (withWidth) => {
     return {
@@ -189,6 +190,33 @@ const UserList = () => {
     setUsers(filteredUsers);
   }
 
+  const search = (keyword) => {
+    if(keyword && keyword.length > 0){
+      let resUsers = [];
+      presidents.forEach((user) => {
+        if(user.nm.indexOf(keyword) !== -1){
+          resUsers.push(user);
+        }
+      });
+      return resUsers;
+    } else {
+      return presidents;
+    }
+  }
+
+  const changeSearch = (e) => {
+    setKeyword(e.target.value);
+    let res = search(e.target.value);
+    setUsers(res);
+  }
+
+  const pressBlurSearch = (e) => {
+    if (e.key === 'Enter' || e.type === 'blur') {
+      let res = search(keyword);
+      setUsers(res);
+    }
+  }
+
   return(
     <div id="user-list">
       <div className="direction-path"><span>Người dùng</span></div>
@@ -196,10 +224,10 @@ const UserList = () => {
         <div className="new-user-mnmt-tile">Đang hoạt động</div>
         <Button className="btn-custom" onClick={() => console.log('clicked GG Sheet')}>Google Sheet</Button>
       </div>
-      <Search 
-        style={{ marginTop: '20px' }}
-        placeholder="Search"
-      />
+      <Input className='input-search' size="small" icon='search' type='text' 
+        placeholder="Search" name='keyword' 
+        value={keyword} onChange={changeSearch} 
+        onKeyPress={pressBlurSearch} onBlur={pressBlurSearch}/>
       
       <div id="hm-custom-table">
         <Wrapper>
@@ -217,7 +245,6 @@ const UserList = () => {
           />
         </Wrapper>
       </div>
-
     </div>
   );
 };
