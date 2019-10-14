@@ -11,5 +11,9 @@
     }
     .sidebar-container {
         background: #6C3F99 !important;
+        overflow-y: hidden !important;
+    }
+    .brand-container {
+        height: 72px;
     }
 }

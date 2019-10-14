@@ -1,0 +1,41 @@
+.account-container {
+    display: flex;
+    .user-container {
+        .fullname {
+            width: 153px;
+            overflow: hidden;
+            display: inline-block;
+            text-decoration: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .tooltip-name {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip-name .tooltiptext-name {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #403294;
+            color: #fff;
+            text-align: center;
+            border-radius: 3px;
+            padding: 4px;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .tooltip-name:hover .tooltiptext-name {
+            visibility: visible;
+        }
+        
+        .device-log {
+            color: #8993A4;
+            font-size: 12px;
+        }
+    }
+}

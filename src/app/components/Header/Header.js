@@ -6,7 +6,7 @@ const Header = () => {
     return (
     <div id="my-header" style={{ position: 'fixed', width: '100%', top: '0', zIndex: '1' }}>
     {/* Navbar */}
-    <nav className="main-header navbar navbar-expand navbar-white navbar-light header-container" style={{ background: '#EAE6FF' }}>
+    <nav className="main-header navbar navbar-expand navbar-white navbar-light header-container">
         {/* Left navbar links */}
         <ul className="navbar-nav">
         <li className="nav-item">
