@@ -218,7 +218,7 @@ const UserList = () => {
     <div id="user-list">
       <div className="direction-path"><span>Người dùng</span></div>
       <div className="buttons-row">
-        <div className="new-user-mnmt-tile">Đang hoạt động</div>
+        <div className="new-user-mnmt-tile">Đang hoạt độngg</div>
         <Button className="btn-custom" onClick={() => console.log('clicked GG Sheet')}>Google Sheet</Button>
       </div>
       <Input className='input-search' size="small" icon='search' type='text' 
